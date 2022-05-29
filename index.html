@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자판기</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>자판기</h1>
+    </header>
+    <main>
+      <section class="user-box">
+        <div class="member-form" action="index.html">
+          <select id="member" required>
+            <option selected disabled>이용자 선택</option>
+            <option value="1">유사원</option>
+            <option value="2">이대리</option>
+            <option value="3">김과장</option>
+            <option value="4">박차장</option>
+            <option value="5" >나사장</option>
+          </select>
+          <input type="submit" id="member-submit" value="선택">
+        </div>
+        <div class="input-box">
+          <div id="member-balance"></div>
+          <div class="input-box__holding-area">
+            <p id="holding-money">투입된 금액: 0</p>
+            <button id="return-btn">반환</button>
+          </div>
+          <div class="input-box__slot">
+            <button id="input-btn"></button>
+            <span>(동전 투입)</span>
+          </div>
+        </div>
+        <div class="admin-box">
+          <div class="admin-box__prd-form" id="prd-add-form" action="index.html">
+            <h2>상품 등록</h2>
+            <div class="row">
+              <label for="prd-name">상품명:</label>
+              <input type="text" id="prd-name" required>
+            </div>
+            <div class="row">
+              <label for="prd-price">판매가격:</label>
+              <input type="number" id="prd-price" required>
+            </div>
+            <div class="row">
+              <label for="prd-count">수량:</label>
+              <input type="number" id="prd-count" required>
+            </div>
+            <div class="row">
+              <input type="submit" id="submit" value="상품 등록">
+            </div>
+          </div>
+          <div class="admin-box__menu">
+            <button id="sort-btn">정산완료</button>
+          </div>
+        </div>
+        <button id="restart">재시작</button>
+      </section>
+      <section class="prd-box">
+        <h2>상품 목록</h2>
+        <p id="prd-null-notice">* 현재 등록된 상품이 없습니다.</p>
+        <ul id="prd-list"></ul>
+      </section>
+    </main>
+  </div>
+</body>
+<script type="text/javascript" src="vending-machine.js"></script>
+</html>
